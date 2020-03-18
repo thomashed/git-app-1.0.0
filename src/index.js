@@ -11,10 +11,19 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 // import thunk middleware for anything async
 import ThunkMiddleware from 'redux-thunk';
+// other middleware, e.g. the logger
+import {createLogger} from 'redux-logger';
 
+// global styles
+import 'tachyons';
 
+//ducks 
 
-
+// middleware: logger
+const logger = createLogger({
+    level: 'log',
+    collapsed: true
+});
 
 
 
