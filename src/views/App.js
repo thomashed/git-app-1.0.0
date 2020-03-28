@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Gif from './components/Gif';
-import SearchGif from './components/SearchGif';
+import SearchGif from './containers/SearchGif';
 
 class App extends Component {
 
