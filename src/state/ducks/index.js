@@ -1,0 +1,1 @@
+export {default as gifsState} from './gifs';
