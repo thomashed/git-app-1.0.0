@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Gif from './components/Gif';
-import SearchField from './components/SearchField';
+import SearchGif from './components/SearchGif';
 
 class App extends Component {
 
@@ -12,10 +12,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           
-          <SearchField></SearchField>
-
-          <Gif></Gif>
-
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -25,6 +21,11 @@ class App extends Component {
             Learn React with Ducks
           </a>
         </header>
+
+        <SearchGif />
+
+        <Gif />
+
       </div>
   )
   }
