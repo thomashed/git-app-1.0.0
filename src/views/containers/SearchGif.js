@@ -1,17 +1,38 @@
 import React from 'react';
+import {gifsOperations} from '../../state/ducks/gifs';
+import {connect} from 'react-redux';
 
-const SearchGif = () => {
+const mapStateToProps = (state) => {
+    return{
+        searchField: state.gifsState.changeSearchFieldReducer.searchField
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeSearchField: (searchString) => dispatch(gifsOperations.changeSearchField(searchString)),   
+    }
+};
+
+
+const SearchGif = ({changeSearchField, searchField}) => {
     let input;
 
     return(
         <div>
+            <div className='ma1 pa1 f-5'>
+                <p>
+                    {searchField}
+                </p>
+            </div>
+            
             <form
                 onSubmit={(e) => {
                             e.preventDefault();
                             if(!input.value.trim()){
                                 return;
                             }
-                            // dispatch: we've changed the searchfield
+                            changeSearchField(input.value);
                         }}
             >
             
@@ -34,5 +55,5 @@ const SearchGif = () => {
     );
 }
 
-export default SearchGif;
+export default connect(mapStateToProps,mapDispatchToProps)(SearchGif);
 

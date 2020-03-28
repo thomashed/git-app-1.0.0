@@ -10,14 +10,14 @@ import * as types from './types';
 */
 
 // TODO: is the below the best way to assign initial value of the store prop?
-const initialStateChangeSearchField = {
-    changeSearchField: ''
+const initialStateSearchField = {
+    searchField: '42'
 }
 
-const changeSearchFieldReducer = (state = initialStateChangeSearchField, action = {}) => {
+const changeSearchFieldReducer = (state = initialStateSearchField, action = {}) => {
     switch(action.type){
         case types.CHANGE_SEARCH_FIELD:
-            return Object.assign({}, state, {changeSearchField: action.payload});
+            return Object.assign({}, state, {searchField: action.payload});
         default: return state;
     }
 }

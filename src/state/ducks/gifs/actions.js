@@ -1,8 +1,8 @@
 import * as types from './types';
 
-const changeSearchField = () => ({
+const changeSearchField = (searchString) => ({
     type: types.CHANGE_SEARCH_FIELD,
-    payload: 'changeSearchField_payload'
+    payload: searchString
 })
 
 export {
