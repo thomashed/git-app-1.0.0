@@ -10,12 +10,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeSearchField: (searchString) => dispatch(gifsOperations.changeSearchField(searchString)),   
+        changeSearchField: (searchString) => dispatch(gifsOperations.changeSearchField(searchString)),
+        sendRequestGif: (searchString) => dispatch(gifsOperations.sendRequestGif(searchString))   
     }
 };
 
 
-const SearchGif = ({changeSearchField, searchField}) => {
+const SearchGif = ({searchField, changeSearchField, sendRequestGif}) => {
     let input;
 
     return(
@@ -33,6 +34,7 @@ const SearchGif = ({changeSearchField, searchField}) => {
                                 return;
                             }
                             changeSearchField(input.value);
+                            sendRequestGif(input.value);
                         }}
             >
             

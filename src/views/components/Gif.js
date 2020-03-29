@@ -1,5 +1,10 @@
 import React from 'react';
 
+
+// shows a gif
+// you click this component, and the GIF url is copied to clipboard --> function from args
+// 
+
 const Gif = () => {
 
     return(

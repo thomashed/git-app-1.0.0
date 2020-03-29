@@ -5,8 +5,14 @@ import * as actions from './actions';
 
 const changeSearchField = actions.changeSearchField;
 
+// sendRequestGif --> async, so its a thunk, we therefore use return fucntion 
+const sendRequestGif = (searchString) => (dispatch) => {
+    dispatch(actions.sendRequestGifPending());
+} 
+
 export {
-    changeSearchField
+    changeSearchField,
+    sendRequestGif
 }
 
 

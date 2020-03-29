@@ -22,8 +22,28 @@ const changeSearchFieldReducer = (state = initialStateSearchField, action = {}) 
     }
 }
 
+const initialStateRequestGifReducer = {
+    isPending: false,
+    gif: '',
+    error: false
+}
+
+const requestGifReducer = (state = initialStateRequestGifReducer, action = {}) => {
+    switch(action.type){
+        case types.REQUEST_GIF_PENDING:           
+            return Object.assign({}, state, {isPending: true});
+        case types.REQUEST_GIF_SUCCESS:           
+            return Object.assign({}, state, {isPending: false});
+        case types.REQUEST_GIF_FAILED:           
+            return Object.assign({}, state, {isPending: false});
+        default:
+            return state;
+    }
+}
+
 const reducer = combineReducers({
-    changeSearchFieldReducer: changeSearchFieldReducer
+    changeSearchFieldReducer: changeSearchFieldReducer,
+    requestGifReducer: requestGifReducer
 })
 
 export default reducer;
