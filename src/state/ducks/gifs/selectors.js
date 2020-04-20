@@ -12,6 +12,8 @@ const isAnotherDummySelector = () => {
     return true;
 }
 
+// amount of gif currently showing
+
 export {
     isDummySelector,
     isAnotherDummySelector

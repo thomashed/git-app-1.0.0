@@ -18,13 +18,15 @@ const changeSearchFieldReducer = (state = initialStateSearchField, action = {}) 
     switch(action.type){
         case types.CHANGE_SEARCH_FIELD:
             return Object.assign({}, state, {searchField: action.payload});
+        case types.CLEAR_GIFS_LIST:
+            return Object.assign({}, state, {searchField: ''}); 
         default: return state;
     }
 }
 
 const initialStateRequestGifReducer = {
     isPending: false,
-    gif: '',
+    gifs: [],
     error: false
 }
 
@@ -33,9 +35,11 @@ const requestGifReducer = (state = initialStateRequestGifReducer, action = {}) =
         case types.REQUEST_GIF_PENDING:           
             return Object.assign({}, state, {isPending: true});
         case types.REQUEST_GIF_SUCCESS:           
-            return Object.assign({}, state, {isPending: false});
+            return Object.assign({}, state, {isPending: false, gifs: action.payload.data});
         case types.REQUEST_GIF_FAILED:           
             return Object.assign({}, state, {isPending: false});
+        case types.CLEAR_GIFS_LIST:
+            return Object.assign({}, state, {gifs: action.payload});
         default:
             return state;
     }

@@ -13,19 +13,26 @@ const sendRequestGifPending = () => ({
     type: types.REQUEST_GIF_PENDING
 })
 
-const sendRequestGifSuccess = () => ({
-    type: types.REQUEST_GIF_SUCCESS
+const sendRequestGifSuccess = (data) => ({
+    type: types.REQUEST_GIF_SUCCESS,
+    payload: data
 })
 
 const sendRequestGifFailed = () => ({
     type: types.REQUEST_GIF_FAILED
 })
 
+const clearGifsList = () => ({
+    type: types.CLEAR_GIFS_LIST,
+    payload: []    
+})
+
 export {
     changeSearchField,
     sendRequestGifPending,
     sendRequestGifSuccess,
-    sendRequestGifFailed
+    sendRequestGifFailed,
+    clearGifsList
 }
 
 

@@ -11,48 +11,53 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeSearchField: (searchString) => dispatch(gifsOperations.changeSearchField(searchString)),
-        sendRequestGif: (searchString) => dispatch(gifsOperations.sendRequestGif(searchString))   
+        sendRequestGif: (searchString) => dispatch(gifsOperations.sendRequestGif(searchString)),
+        clearGifsList: () => dispatch(gifsOperations.clearGifsList())   
     }
 };
 
 
-const SearchGif = ({searchField, changeSearchField, sendRequestGif}) => {
+const SearchGif = ({searchField, changeSearchField, sendRequestGif, clearGifsList}) => {
     let input;
 
     return(
         <div>
-            <div className='ma1 pa1 f-5'>
-                <p>
+            <div className='f-5 ma3'>
                     {searchField}
-                </p>
             </div>
             
-            <form
-                onSubmit={(e) => {
-                            e.preventDefault();
-                            if(!input.value.trim()){
-                                return;
-                            }
-                            changeSearchField(input.value);
-                            sendRequestGif(input.value);
-                        }}
-            >
-            
-            <input
-                ref={node => {
-                    input = node
-                }}
-                id='id_searchField'
-                className='shadow-3 ma5 pa3 ba b--green bg-lightest-blue' 
-                type='search' 
-                placeholder='type here to search'
-            />
+            <div className='dib'>
+                <div className='dib'>
+                    <button onClick={clearGifsList}>CLEAR</button>
+                </div>
 
-            <button type='submit'>
-                SEARCH
-            </button>
+                <form
+                    onSubmit={(e) => {
+                                e.preventDefault();
+                                if(!input.value.trim()){
+                                    return;
+                                }
+                                changeSearchField(input.value);
+                                sendRequestGif(input.value);
+                            }}
+                >
+                
+                <input
+                    ref={node => {
+                        input = node
+                    }}
+                    id='id_searchField'
+                    className='shadow-3 ma2 pa3 ba b--green bg-lightest-blue' 
+                    type='search' 
+                    placeholder='type here to search'
+                />
 
-            </form>
+                <button type='submit'>
+                    SEARCH
+                </button>
+
+                </form>
+            </div>
         </div>
     );
 }
