@@ -22,19 +22,15 @@ const sendRequestGif = (searchString) => (dispatch) => {
 const clearGifsList = actions.clearGifsList;
 
 const gifClicked = (dispatch, elementId, gifUrl) => {
-    console.log('------------> Operations: gifClicked called')
-    console.log('------------> Operations: is dispatch? --> ' + typeof(dispatch))
-    console.log('------------> Operations: is elementId? --> ' + typeof(elementId))
-    console.log('------------> Operations: is gifUrl? --> ' + typeof(gifUrl))
-    console.log('------------> Operations: is elementId? --> ' + elementId)
-    console.log('------------> Operations: is gifUrl? --> ' + gifUrl)
-
-    var copyText = document.getElementById("justAtedewest");
-    console.log('------------> Operations: is copyText? --> ' + typeof(copyText))
-    copyText.select();
-
-
-
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.id = elementId;
+    input.value = gifUrl;
+    document.body.appendChild(input);
+    input.select()
+    input.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    document.body.removeChild(input);
 }
 
 export {

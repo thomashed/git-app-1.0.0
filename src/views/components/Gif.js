@@ -5,11 +5,11 @@ import React from 'react';
 // you click this component, and the GIF url is copied to clipboard --> function from args
 // 
 
-const Gif = ({ id, keyProp, urlOriginal, sizeOriginal, gifClicked }) => {
+const Gif = ({ keyProp, urlOriginal, sizeOriginal, gifClicked }) => {
 
     return(
-        <div id={id} className='dib tc grow bg-light-green br3 pa3 ma2 bw2 shadow-5'>
-            <button onClick={() => gifClicked(id, urlOriginal)}>
+        <div className='dib tc grow bg-light-green br3 pa3 ma2 bw2 shadow-5'>
+            <button onClick={() => gifClicked(keyProp, urlOriginal)}>
                 <p>keyProp: {keyProp}</p>
                 <p>url: {urlOriginal}</p>
                 <p>size: {sizeOriginal}</p>
