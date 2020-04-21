@@ -22,15 +22,21 @@ const sendRequestGif = (searchString) => (dispatch) => {
 const clearGifsList = actions.clearGifsList;
 
 const gifClicked = (dispatch, elementId, gifUrl) => {
-    var input = document.createElement('input');
-    input.type = 'text';
-    input.id = elementId;
-    input.value = gifUrl;
-    document.body.appendChild(input);
-    input.select()
-    input.setSelectionRange(0, 99999);
-    document.execCommand('copy');
-    document.body.removeChild(input);
+    try{
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.id = elementId;
+        input.value = gifUrl;
+        document.body.appendChild(input);
+        input.select()
+        input.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        dispatch(actions.copyGifSuccess(input.value));
+    }catch(err){
+        dispatch(actions.copyGifFailed(err));
+    }finally{
+        document.body.removeChild(input);
+    }
 }
 
 export {

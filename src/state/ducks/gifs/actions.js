@@ -27,12 +27,24 @@ const clearGifsList = () => ({
     payload: []    
 })
 
+const copyGifSuccess = (data) => ({
+    type: types.COPY_GIF_SUCCESS,
+    payload: data
+})
+
+const copyGifFailed = (data) => ({
+    type: types.COPY_GIF_FAILED,
+    payload: data
+})
+
 export {
     changeSearchField,
     sendRequestGifPending,
     sendRequestGifSuccess,
     sendRequestGifFailed,
-    clearGifsList
+    clearGifsList,
+    copyGifSuccess,
+    copyGifFailed
 }
 
 
