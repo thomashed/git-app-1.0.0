@@ -45,9 +45,27 @@ const requestGifReducer = (state = initialStateRequestGifReducer, action = {}) =
     }
 }
 
+const initialStateCopyGifReducer = {
+    currentCopiedGifUrl: '',
+    error: false
+}
+
+const copyGifReducer = (state = initialStateCopyGifReducer, action = {}) => {
+    switch(action.type){
+        case types.COPY_GIF_SUCCESS:
+            return Object.assign({}, state, {currentCopiedGifUrl: action.payload});
+        case types.COPY_GIF_FAILED:
+            return Object.assign({}, state, {currentCopiedGifUrl: '', error: true});
+        default:
+            return state;
+    }
+}
+
+
 const reducer = combineReducers({
     changeSearchFieldReducer: changeSearchFieldReducer,
-    requestGifReducer: requestGifReducer
+    requestGifReducer: requestGifReducer,
+    copyGifReducer: copyGifReducer
 })
 
 export default reducer;

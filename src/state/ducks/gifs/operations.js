@@ -37,6 +37,7 @@ const gifClicked = (dispatch, elementId, gifUrl) => {
     }finally{
         document.body.removeChild(input);
     }
+    // TODO: add reducer functions
 }
 
 export {
