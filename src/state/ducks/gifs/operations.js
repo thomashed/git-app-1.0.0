@@ -12,17 +12,13 @@ const sendRequestGif = (searchString) => (dispatch) => {
     fetch('https://api.giphy.com/v1/gifs/search?api_key=Hd1fR0FW1u2HXkBFYL1jVNXIub1V081Y&q=ryan gosling&limit=50&offset=0&rating=G&lang=en')
     .then(response => response.json())
     .then(response => {
-        // filter for size
-        // console.log('--------> ' + typeof response.data)
-        // response.data.images.original.size <= 2100000
-        console.log('--------> ' + Object.keys(response.data))
+        // filter for size, less than 2.1 mb
         const sortedData = [];
         response.data.forEach(gifObject => {
             if(gifObject.images.original.size <= 2100000){
                 sortedData.push(gifObject)
             }
         });
-        console.log('--------> ' + sortedData.length)
         dispatch(actions.sendRequestGifSuccess(sortedData));
     })
     .catch(error => {
