@@ -23,7 +23,7 @@ const SearchGif = ({searchField, changeSearchField, sendRequestGif, clearGifsLis
     return(
         <div>
             <div className='f-5 ma3'>
-                    {searchField}
+                    Current Search: {searchField}
             </div>
             
             <div className='dib'>

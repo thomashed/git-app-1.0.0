@@ -9,7 +9,7 @@ const changeSearchField = actions.changeSearchField;
 const sendRequestGif = (searchString) => (dispatch) => {
     dispatch(actions.sendRequestGifPending());
 
-    fetch('https://api.giphy.com/v1/gifs/search?api_key=Hd1fR0FW1u2HXkBFYL1jVNXIub1V081Y&q=ryan gosling&limit=50&offset=0&rating=G&lang=en')
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=Hd1fR0FW1u2HXkBFYL1jVNXIub1V081Y&q=' + searchString + '&limit=100&offset=0&rating=G&lang=en')
     .then(response => response.json())
     .then(response => {
         // filter for size, less than 2.1 mb
