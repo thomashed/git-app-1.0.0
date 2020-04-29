@@ -9,10 +9,21 @@ const changeSearchField = actions.changeSearchField;
 const sendRequestGif = (searchString) => (dispatch) => {
     dispatch(actions.sendRequestGifPending());
 
-    fetch('https://api.giphy.com/v1/gifs/search?api_key=Hd1fR0FW1u2HXkBFYL1jVNXIub1V081Y&q=ryan gosling&limit=5&offset=0&rating=G&lang=en')
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=Hd1fR0FW1u2HXkBFYL1jVNXIub1V081Y&q=ryan gosling&limit=50&offset=0&rating=G&lang=en')
     .then(response => response.json())
-    .then(data => {
-        dispatch(actions.sendRequestGifSuccess(data));
+    .then(response => {
+        // filter for size
+        // console.log('--------> ' + typeof response.data)
+        // response.data.images.original.size <= 2100000
+        console.log('--------> ' + Object.keys(response.data))
+        const sortedData = [];
+        response.data.forEach(gifObject => {
+            if(gifObject.images.original.size <= 2100000){
+                sortedData.push(gifObject)
+            }
+        });
+        console.log('--------> ' + sortedData.length)
+        dispatch(actions.sendRequestGifSuccess(sortedData));
     })
     .catch(error => {
         dispatch(actions.sendRequestGifFailed());

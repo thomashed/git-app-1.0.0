@@ -34,8 +34,8 @@ const requestGifReducer = (state = initialStateRequestGifReducer, action = {}) =
     switch(action.type){
         case types.REQUEST_GIF_PENDING:           
             return Object.assign({}, state, {isPending: true});
-        case types.REQUEST_GIF_SUCCESS:           
-            return Object.assign({}, state, {isPending: false, gifs: action.payload.data});
+        case types.REQUEST_GIF_SUCCESS:   
+            return Object.assign({}, state, {isPending: false, gifs: action.payload});
         case types.REQUEST_GIF_FAILED:           
             return Object.assign({}, state, {isPending: false});
         case types.CLEAR_GIFS_LIST:
