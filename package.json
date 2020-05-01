@@ -1,4 +1,5 @@
 {
+  "homepage": "http://thomashed.github.io/gif_app_04",
   "name": "gif_app_04",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +16,8 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "redux-logger": "^3.0.6"
   }
 }
