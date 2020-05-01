@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/gif_app_04/static/css/main.68ebd082.chunk.css",
-    "main.js": "/gif_app_04/static/js/main.498aea3a.chunk.js",
-    "main.js.map": "/gif_app_04/static/js/main.498aea3a.chunk.js.map",
-    "runtime-main.js": "/gif_app_04/static/js/runtime-main.9ccb2a88.js",
-    "runtime-main.js.map": "/gif_app_04/static/js/runtime-main.9ccb2a88.js.map",
-    "static/css/2.3b6f1bda.chunk.css": "/gif_app_04/static/css/2.3b6f1bda.chunk.css",
-    "static/js/2.faff77ce.chunk.js": "/gif_app_04/static/js/2.faff77ce.chunk.js",
-    "static/js/2.faff77ce.chunk.js.map": "/gif_app_04/static/js/2.faff77ce.chunk.js.map",
-    "index.html": "/gif_app_04/index.html",
-    "precache-manifest.a24f15fa15347428293fdf08918102f7.js": "/gif_app_04/precache-manifest.a24f15fa15347428293fdf08918102f7.js",
-    "service-worker.js": "/gif_app_04/service-worker.js",
-    "static/css/2.3b6f1bda.chunk.css.map": "/gif_app_04/static/css/2.3b6f1bda.chunk.css.map",
-    "static/css/main.68ebd082.chunk.css.map": "/gif_app_04/static/css/main.68ebd082.chunk.css.map",
-    "static/js/2.faff77ce.chunk.js.LICENSE.txt": "/gif_app_04/static/js/2.faff77ce.chunk.js.LICENSE.txt"
+    "main.css": "/Gif_04_Re_Ducks/static/css/main.68ebd082.chunk.css",
+    "main.js": "/Gif_04_Re_Ducks/static/js/main.d5abf0fb.chunk.js",
+    "main.js.map": "/Gif_04_Re_Ducks/static/js/main.d5abf0fb.chunk.js.map",
+    "runtime-main.js": "/Gif_04_Re_Ducks/static/js/runtime-main.bc858d81.js",
+    "runtime-main.js.map": "/Gif_04_Re_Ducks/static/js/runtime-main.bc858d81.js.map",
+    "static/css/2.3b6f1bda.chunk.css": "/Gif_04_Re_Ducks/static/css/2.3b6f1bda.chunk.css",
+    "static/js/2.faff77ce.chunk.js": "/Gif_04_Re_Ducks/static/js/2.faff77ce.chunk.js",
+    "static/js/2.faff77ce.chunk.js.map": "/Gif_04_Re_Ducks/static/js/2.faff77ce.chunk.js.map",
+    "index.html": "/Gif_04_Re_Ducks/index.html",
+    "precache-manifest.b9148eb508586a328a9271fb6a255ca4.js": "/Gif_04_Re_Ducks/precache-manifest.b9148eb508586a328a9271fb6a255ca4.js",
+    "service-worker.js": "/Gif_04_Re_Ducks/service-worker.js",
+    "static/css/2.3b6f1bda.chunk.css.map": "/Gif_04_Re_Ducks/static/css/2.3b6f1bda.chunk.css.map",
+    "static/css/main.68ebd082.chunk.css.map": "/Gif_04_Re_Ducks/static/css/main.68ebd082.chunk.css.map",
+    "static/js/2.faff77ce.chunk.js.LICENSE.txt": "/Gif_04_Re_Ducks/static/js/2.faff77ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9ccb2a88.js",
+    "static/js/runtime-main.bc858d81.js",
     "static/css/2.3b6f1bda.chunk.css",
     "static/js/2.faff77ce.chunk.js",
     "static/css/main.68ebd082.chunk.css",
-    "static/js/main.498aea3a.chunk.js"
+    "static/js/main.d5abf0fb.chunk.js"
   ]
 }
